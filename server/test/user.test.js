@@ -1,6 +1,6 @@
 const request = require("supertest")
 const app = require("../app")
-const { generateToken } = require("../helpers/jwt")
+const { User } = require('../models')
 
 const user_data = {
 	email: 'admin@mail.com',

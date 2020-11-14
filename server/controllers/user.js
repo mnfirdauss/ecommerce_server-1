@@ -5,14 +5,13 @@ const { generateToken } = require("../helpers/jwt")
 class UserController {
 	static async login (req, res, next) {
 		const { email, password } = req.body
-
+		
 		try {
 			const payload = {
 				email, password
 			}
-			
 			if (!email || !password) {
-        throw { msg: 'Please input email and password', status: 400 }
+				throw { msg: 'Please input email and password', status: 400 }
       }
 
 			const user = await User.findOne({ where: { email }})
